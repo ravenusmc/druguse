@@ -10,8 +10,8 @@ alcoholUse = drugs[['alcohol-use']]
 
 # plt.xlabel("Age", fontsize=14)
 # plt.ylabel("Freq of Use in past 12 months", fontsize=12)
-test = alcoholUse.plot(kind='bar', title="Alcohol Use")
-plt.show(test)
+#test = alcoholUse.plot(kind='bar', title="Alcohol Use")
+plt.show(alcoholUse.plot(kind='bar'))
 
 
 # Use => Percentage of those in an age group who used marijuana in the past 12 months

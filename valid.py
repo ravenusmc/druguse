@@ -6,3 +6,9 @@ def menuValid(choice):
     return True
   else:
     return False
+
+def drugSelectionValid(drugSelection):
+  if drugSelection == 1 or drugSelection == 2:
+    return True
+  else:
+    return False
