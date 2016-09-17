@@ -38,6 +38,11 @@ def dataMenu():
   drugs = pd.read_csv('drugs.csv')
   print("1. Alcohol Usage")
   print("2. Marijuana Usage")
+  print("3. Cocaine Usage")
+  print("4. Heroin Usage")
+  print("5. Hallucinogen Usage")
+  print("6. Inhalant Usage")
+  print("7. Pain Releiver Usage")
   drugSelection = int(input("What do you want to look at? "))
   while not drugSelectionValid(drugSelection):
     print("What is not a valid selection!")
@@ -47,6 +52,21 @@ def dataMenu():
     drug_Graph(drugUse)
   elif drugSelection == 2:
     drugUse = "marijuana-use"
+    drug_Graph(drugUse)
+  elif drugSelection == 3:
+    drugUse = "cocaine-use"
+    drug_Graph(drugUse)
+  elif drugSelection == 4:
+    drugUse = "heroin-use"
+    drug_Graph(drugUse)
+  elif drugSelection == 5:
+    drugUse = "hallucinogen-use"
+    drug_Graph(drugUse)
+  elif drugSelection == 6:
+    drugUse = "inhalant-use"
+    drug_Graph(drugUse)
+  elif drugSelection == 7:
+    drugUse = "pain-releiver-use"
     drug_Graph(drugUse)
 
 #I originally had numerous functions for each drug but refractured my code to only have one function! This one function
@@ -59,7 +79,6 @@ def drug_Graph(drugUse):
   input("Press enter to make the graph appear! ")
   plt.show(drug.plot(kind='bar'))
   dataMenu_OrQuit()
-
 
 ### Non-Critical program functions below here.  
 
