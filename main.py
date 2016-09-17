@@ -43,28 +43,21 @@ def dataMenu():
     print("What is not a valid selection!")
     drugSelection = int(input("What do you want to look at? "))
   if drugSelection == 1:
-    alcoholUser()
+    drugUse = "alcohol-use"
+    drug_Graph(drugUse)
   elif drugSelection == 2:
-    marijuanaUser()
+    drugUse = "marijuana-use"
+    drug_Graph(drugUse)
 
-#This function will allow the user to look at alcohol usage. 
-def alcoholUser():
+#I originally had numerous functions for each drug but refractured my code to only have one function! This one function
+#will display the bar graph for the drug data. 
+def drug_Graph(drugUse):
   print("\033c")
-  drugs = pd.read_csv('drugs.csv', usecols=["age", "alcohol-use"], index_col=['age'])
-  alcoholUse = drugs[['alcohol-use']]
+  drugs = pd.read_csv('drugs.csv', usecols=["age", drugUse], index_col=['age'])
+  drug = drugs[[drugUse]]
   print("Once the graph appears, you must close it to move on")
   input("Press enter to make the graph appear! ")
-  plt.show(alcoholUse.plot(kind='bar'))
-  dataMenu_OrQuit()
-
-#This function will allow the user to look at alcohol usage. 
-def marijuanaUser():
-  print("\033c")
-  drugs = pd.read_csv('drugs.csv', usecols=["age", "marijuana-use"], index_col=['age'])
-  marijuanaUse = drugs[['marijuana-use']]
-  print("Once the graph appears, you must close it to move on")
-  input("Press enter to make the graph appear! ")
-  plt.show(marijuanaUse.plot(kind='bar'))
+  plt.show(drug.plot(kind='bar'))
   dataMenu_OrQuit()
 
 
