@@ -20,7 +20,8 @@ def menu():
   print("\033c")
   print("Main Menu")
   print("1. Look at Data")
-  print("2. Quit")
+  print("2. Information about this program")
+  print("3. Quit")
   choice = int(input("What would you like to do? "))
   while not menuValid(choice):
     print("That is not a valid selection")
@@ -28,6 +29,8 @@ def menu():
   if choice == 1:
     dataMenu()
   elif choice == 2:
+    information()
+  elif choice == 3:
     print("Thank you for using the program.")
     print("I hope that you stop by soon!")
     input("Press enter to exit ")
@@ -79,6 +82,15 @@ def drug_Graph(drugUse):
   input("Press enter to make the graph appear! ")
   plt.show(drug.plot(kind='bar'))
   dataMenu_OrQuit()
+
+def information():
+  print("\033c")
+  print("The data used in this project came from the FiveThirtyEight github repo.")
+  print("This project specifically looks at the percentage of people, in an age group,")
+  print("Who used the drug in the past 12 months.")
+  print("That is all!")
+  dataMenu_OrQuit()
+
 
 ### Non-Critical program functions below here.  
 
