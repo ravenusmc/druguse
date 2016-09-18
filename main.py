@@ -80,9 +80,11 @@ def drug_Graph(drugUse):
   drug = drugs[[drugUse]]
   print("Once the graph appears, you must close it to move on")
   input("Press enter to make the graph appear! ")
-  plt.show(drug.plot(kind='bar'))
+  plt.show(drug.plot(kind='bar', title = drugUse, figsize=(12,8)))
   dataMenu_OrQuit()
 
+#This function simply tells the user some basic information about this program-specifically focusing on the data
+#aspect. 
 def information():
   print("\033c")
   print("The data used in this project came from the FiveThirtyEight github repo.")
